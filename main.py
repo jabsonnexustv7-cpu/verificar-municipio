@@ -72,3 +72,8 @@ def verificar_cidade():
         response=json.dumps({"atendida": False, "cidade": cidade_formatada, "grupo": None}, ensure_ascii=False),
         mimetype='application/json'
     )
+import os
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 10000))  # Render exige porta vinda da variável PORT
+    app.run(host='0.0.0.0', port=port)
