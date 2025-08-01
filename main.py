@@ -1,14 +1,15 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import json
 
 app = Flask(__name__)
 
 # Bloco 1: Tio Sam
 tio_sam_cidades = [
-    "Aguaí", "Baby Bassitt", "Cravinhos", "Cubatão", "Franca", "Indaiatuba", "Itapetininga", "Itu",
-    "Itupeva", "Leme", "Limeira", "Lins", "Mirassol", "Mogi Guaçu", "Mogi Mirim", "Peruibe", "Pirassununga",
-    "Porto Ferreira", "Salto", "São José do Rio Preto", "Artur Nogueira", "Cosmópolis", "Estiva Gerbi",
-    "Tambaú", "Santa Rita do Passa Quatro", "Santa Cruz das Palmeiras", "Casa Branca", "Cedral"
+    "Açaí", "Bady Bassitt", "Cravinhos", "Cubatão", "Franca", "Indaiatuba", "Itapetininga", "Itu",
+    "Itupeva", "Leme", "Limeira", "Lins", "Mirassol", "Mogi Guaçu", "Mogi Mirim", "Peruíbe",
+    "Pirassununga", "Porto Ferreira", "Salto", "São José do Rio Preto", "Artur Nogueira", "Cosmópolis",
+    "Estiva Gerbi", "Tambaú", "Santa Rita do Passa Quatro", "Santa Cruz das Palmeiras",
+    "Casa Branca", "Cedral"
 ]
 
 # Bloco 2: Barretos
@@ -18,29 +19,29 @@ barretos_cidades = [
 
 # Bloco 3: Cidades gerais
 cidades_gerais = [
-    "Aguaí", "Águas de Santa Bárbara", "Alumínio", "Americana", "Américo Brasiliense", "Amparo",
-    "Araçoiaguma", "Araçariguama", "Araras", "Artur Nogueira", "Atibaia", "Baby Bassitt", "Barretos",
-    "Bebedouro", "Biritiba-Mirim", "Boa Esperança do Sul", "Bom Jesus dos Perdões", "Borboeama",
+    "Açaí", "Águas de Santa Bárbara", "Alumínio", "Americana", "Américo Brasiliense", "Amparo",
+    "Araçoiaba da Serra", "Araçariguama", "Araras", "Artur Nogueira", "Atibaia", "Bady Bassitt", "Barretos",
+    "Bebedouro", "Birigui", "Biritaba-Mirim", "Boa Esperança do Sul", "Bom Jesus dos Perdões", "Borboema",
     "Bragança Paulista", "Cabreúva", "Caçapava", "Caieiras", "Campinas", "Campo Limpo Paulista",
     "Cândido Rodrigues", "Capivari", "Casa Branca", "Cedral", "Colina", "Conchal", "Cordeirópolis",
-    "Coroados", "Cravinhos", "Cubatão", "Descalvado", "Diadema", "Dois Córregos", "Elias Fausto", "Embu",
-    "Espírito Santo do Pinhal", "Estiva Gerbi", "Fernandópolis", "Franca", "Guaratinguetá", "Guariba",
-    "Guarulhos", "Hortolândia", "Ilha Solteira", "Indaiatuba", "Itapecerica da Serra", "Itapetininga",
-    "Itapeva", "Itatiba", "Itatiba", "Itu", "Itupeva", "Jaboticabal", "Jaguariúna", "Jales", "Jarinu",
-    "Joanópolis", "Jundiaí", "Leme", "Limeira", "Lins", "Lorena", "Marília", "Matão", "Mauá",
-    "Miguelópolis", "Mirassol", "Mococa", "Mogi das Cruzes", "Mogi Guaçu", "Mogi Mirim", "Monte Alto",
-    "Monte Aprazível", "Monte Azul Paulista", "Nova Odessa", "Olímpia", "Orlândia", "Osasco", "Paulínia",
-    "Pedreira", "Peruíbe", "Pindamonhangaba", "Piracicaba", "Pirassununga", "Poá", "Porto Ferreira",
-    "Presidente Prudente", "Ribeirão Pires", "Ribeirão Preto", "Rio Claro", "Salto", "Santa Bárbara d'Oeste",
-    "Santa Cruz das Palmeiras", "Santa Rita do Passa Quatro", "Santo André", "Santos", "São Bernardo do Campo",
-    "São Carlos", "São João da Boa Vista", "São José do Rio Preto", "São José dos Campos", "São Paulo",
-    "São Pedro", "Sertãozinho", "Sumaré", "Suzano", "Taboão da Serra", "Tambaú", "Taquaritinga", "Taubaté",
-    "Tietê", "Valinhos", "Vargem Grande do Sul", "Várzea Paulista", "Votorantim", "Votuporanga"
+    "Cosmópolis", "Cravinhos", "Cubatão", "Descalvado", "Diadema", "Espírito Santo do Pinhal",
+    "Estiva Gerbi", "Fernandópolis", "Franca", "Hortolândia", "Ibaté", "Ibirá", "Ibitinga", "Indaiatuba",
+    "Itapecerica da Serra", "Itapetininga", "Itapeva", "Itatiba", "Itu", "Ituverava", "Jaboticabal",
+    "Jacareí", "Jaguariúna", "Jales", "Jandira", "Jarinu", "Jaú", "Jundiaí", "Lençóis Paulista", "Leme",
+    "Limeira", "Lins", "Lorena", "Mairinque", "Marília", "Matão", "Mococa", "Mogi Guaçu", "Mogi Mirim",
+    "Monte Alto", "Monte Azul Paulista", "Monte Mor", "Nova Odessa", "Olímpia", "Orlândia", "Osasco",
+    "Ourinhos", "Paulínia", "Penápolis", "Pereira Barreto", "Peruíbe", "Pindamonhangaba", "Piracicaba",
+    "Pirassununga", "Porto Ferreira", "Praia Grande", "Ribeirão Preto", "Rio Claro", "Rio das Pedras",
+    "Salto", "Santa Bárbara d'Oeste", "Santa Cruz das Palmeiras", "Santa Rita do Passa Quatro",
+    "Santo André", "Santos", "São Bernardo do Campo", "São Caetano do Sul", "São Carlos", "São José do Rio Preto",
+    "São José dos Campos", "São Paulo", "Sertãozinho", "Sorocaba", "Sumaré", "Suzano", "Taboão da Serra",
+    "Tambaú", "Taquaritinga", "Taubaté", "Tietê", "Valinhos", "Vinhedo", "Votorantim", "Votuporanga"
 ]
 
 @app.route('/verificar-cidade')
 def verificar_cidade():
     nome_cidade = request.args.get('nome')
+
     if not nome_cidade:
         return app.response_class(
             response=json.dumps({"erro": "Parâmetro 'nome' é obrigatório"}, ensure_ascii=False),
