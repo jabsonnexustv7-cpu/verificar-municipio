@@ -24,7 +24,7 @@ cidades_gerais = [
     "Bebedouro", "Birigui", "Biritaba-Mirim", "Boa Esperança do Sul", "Bom Jesus dos Perdões", "Borboema",
     "Bragança Paulista", "Cabreúva", "Caçapava", "Caieiras", "Campinas", "Campo Limpo Paulista",
     "Cândido Rodrigues", "Capivari", "Casa Branca", "Cedral", "Colina", "Conchal", "Cordeirópolis",
-    "Cosmópolis", "Cravinhos", "Cubatão", "Descalvado", "Diadema", "Espírito Santo do Pinhal",
+    "Cosmópolis", "Cravinhos", "Cubatão", "Descalvado", "Espírito Santo do Pinhal",
     "Estiva Gerbi", "Fernandópolis", "Franca", "Hortolândia", "Ibaté", "Ibirá", "Ibitinga", "Indaiatuba",
     "Itapecerica da Serra", "Itapetininga", "Itapeva", "Itatiba", "Itu", "Ituverava", "Jaboticabal",
     "Jacareí", "Jaguariúna", "Jales", "Jandira", "Jarinu", "Jaú", "Jundiaí", "Lençóis Paulista", "Leme",
