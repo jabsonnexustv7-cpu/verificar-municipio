@@ -47,7 +47,7 @@ cidades_gerais = [
     "Vargem Grande Paulista", "Francisco Morato", "Franco da Rocha", "Dobrada", "Dois Córregos", "Dourado",
     "Fernando Prestes", "Bofete", "Botucatu", "Borborema", "Bocaina", "Areiópolis", "Avaré", "Agudos",
     "Barra Bonita", "Mirassol", "Mineiros do Tietê", "Capela do Alto", "Campina do Monte Alegre", "Angatuba",
-    "Américo Brasiliense", "Araçoiaba da Serra"
+    "Américo Brasiliense", "Araçoiaba da Serra", "Aguaí"
 ]
 
 @app.route('/verificar-cidade')
