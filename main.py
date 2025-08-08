@@ -38,7 +38,7 @@ cidades_gerais = [
     "Santa Adélia", "Santa Bárbara d'Oeste", "Santa Branca", "Santa Cruz das Palmeiras", "Santa Ernestina",
     "Santa Gertrudes", "Santa Lúcia", "Santa Rita do Passa Quatro", "Santo André", "Santo Antônio de Posse",
     "Santos", "São Bernardo do Campo", "São Caetano do Sul", "São Carlos", "São José do Rio Preto",
-    "São José dos Campos", "São Manuel", "São Paulo", "São Vicente", "Sarapuí", "Sertãozinho", "Sorocaba",
+    "São José dos Campos", "São Manuel", "São Vicente", "Sarapuí", "Sertãozinho", "Sorocaba",
     "Sumaré", "Suzano", "Tabatinga", "Taboão da Serra", "Tambaú", "Taquaritinga", "Taubaté", "Tatuí",
     "Tietê", "Tremembé", "Trabiju", "Valinhos", "Várzea Paulista", "Vinhedo", "Votorantim", "Votuporanga",
     "Guarujá", "Guariba", "Guararema", "Guatapará", "Iaras", "Igaratá", "Itaí", "Itajobi", "Itaju", "Itápolis",
